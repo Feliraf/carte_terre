@@ -6,7 +6,7 @@
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/leaflet.css"><link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css">
         <link rel="stylesheet" href="css/qgis2web.css">
         <style>
         html, body, #map {
@@ -22,7 +22,7 @@
         <div id="map">
         </div>
         <script src="js/qgis2web_expressions.js"></script>
-        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.js"></script><script src="js/L.Control.Locate.min.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
         <script src="js/leaflet.pattern.js"></script>
         <script src="js/leaflet-hash.js"></script>
@@ -30,16 +30,17 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/Bernay_0.js"></script>
-        <script src="data/Marsais_1.js"></script>
-        <script src="data/Muron_2.js"></script>
-        <script src="data/St_Mard_3.js"></script>
+        <script src="data/Marsais_0.js"></script>
+        <script src="data/Muron_1.js"></script>
+        <script src="data/St_Mard_2.js"></script>
+        <script src="data/Bernay_3.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[46.0782639076,-0.695940062025],[46.1244210676,-0.63177035178]]);
+        }).fitBounds([[45.9791872245,-0.866901655],[46.1368364755,-0.647730745]]);
         var hash = new L.Hash(map);
         map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
+        L.control.locate().addTo(map);
         var bounds_group = new L.featureGroup([]);
         var basemap0 = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
@@ -48,7 +49,7 @@
         basemap0.addTo(map);
         function setBounds() {
         }
-        function pop_Bernay_0(feature, layer) {
+        function pop_Marsais_0(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
@@ -78,9 +79,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Bernay_0_0() {
+        function style_Marsais_0_0() {
             return {
-                pane: 'pane_Bernay_0',
+                pane: 'pane_Marsais_0',
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
@@ -89,21 +90,21 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(199,215,136,1.0)',
+                fillColor: 'rgba(82,163,92,1.0)',
             }
         }
-        map.createPane('pane_Bernay_0');
-        map.getPane('pane_Bernay_0').style.zIndex = 400;
-        map.getPane('pane_Bernay_0').style['mix-blend-mode'] = 'normal';
-        var layer_Bernay_0 = new L.geoJson(json_Bernay_0, {
+        map.createPane('pane_Marsais_0');
+        map.getPane('pane_Marsais_0').style.zIndex = 400;
+        map.getPane('pane_Marsais_0').style['mix-blend-mode'] = 'normal';
+        var layer_Marsais_0 = new L.geoJson(json_Marsais_0, {
             attribution: '<a href=""></a>',
-            pane: 'pane_Bernay_0',
-            onEachFeature: pop_Bernay_0,
-            style: style_Bernay_0_0,
+            pane: 'pane_Marsais_0',
+            onEachFeature: pop_Marsais_0,
+            style: style_Marsais_0_0,
         });
-        bounds_group.addLayer(layer_Bernay_0);
-        map.addLayer(layer_Bernay_0);
-        function pop_Marsais_1(feature, layer) {
+        bounds_group.addLayer(layer_Marsais_0);
+        map.addLayer(layer_Marsais_0);
+        function pop_Muron_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
@@ -133,9 +134,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Marsais_1_0() {
+        function style_Muron_1_0() {
             return {
-                pane: 'pane_Marsais_1',
+                pane: 'pane_Muron_1',
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
@@ -144,21 +145,21 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(239,183,174,1.0)',
+                fillColor: 'rgba(37,224,134,1.0)',
             }
         }
-        map.createPane('pane_Marsais_1');
-        map.getPane('pane_Marsais_1').style.zIndex = 401;
-        map.getPane('pane_Marsais_1').style['mix-blend-mode'] = 'normal';
-        var layer_Marsais_1 = new L.geoJson(json_Marsais_1, {
+        map.createPane('pane_Muron_1');
+        map.getPane('pane_Muron_1').style.zIndex = 401;
+        map.getPane('pane_Muron_1').style['mix-blend-mode'] = 'normal';
+        var layer_Muron_1 = new L.geoJson(json_Muron_1, {
             attribution: '<a href=""></a>',
-            pane: 'pane_Marsais_1',
-            onEachFeature: pop_Marsais_1,
-            style: style_Marsais_1_0,
+            pane: 'pane_Muron_1',
+            onEachFeature: pop_Muron_1,
+            style: style_Muron_1_0,
         });
-        bounds_group.addLayer(layer_Marsais_1);
-        map.addLayer(layer_Marsais_1);
-        function pop_Muron_2(feature, layer) {
+        bounds_group.addLayer(layer_Muron_1);
+        map.addLayer(layer_Muron_1);
+        function pop_St_Mard_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
@@ -188,9 +189,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Muron_2_0() {
+        function style_St_Mard_2_0() {
             return {
-                pane: 'pane_Muron_2',
+                pane: 'pane_St_Mard_2',
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
@@ -199,21 +200,21 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(26,204,154,1.0)',
+                fillColor: 'rgba(178,120,187,1.0)',
             }
         }
-        map.createPane('pane_Muron_2');
-        map.getPane('pane_Muron_2').style.zIndex = 402;
-        map.getPane('pane_Muron_2').style['mix-blend-mode'] = 'normal';
-        var layer_Muron_2 = new L.geoJson(json_Muron_2, {
+        map.createPane('pane_St_Mard_2');
+        map.getPane('pane_St_Mard_2').style.zIndex = 402;
+        map.getPane('pane_St_Mard_2').style['mix-blend-mode'] = 'normal';
+        var layer_St_Mard_2 = new L.geoJson(json_St_Mard_2, {
             attribution: '<a href=""></a>',
-            pane: 'pane_Muron_2',
-            onEachFeature: pop_Muron_2,
-            style: style_Muron_2_0,
+            pane: 'pane_St_Mard_2',
+            onEachFeature: pop_St_Mard_2,
+            style: style_St_Mard_2_0,
         });
-        bounds_group.addLayer(layer_Muron_2);
-        map.addLayer(layer_Muron_2);
-        function pop_St_Mard_3(feature, layer) {
+        bounds_group.addLayer(layer_St_Mard_2);
+        map.addLayer(layer_St_Mard_2);
+        function pop_Bernay_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
@@ -243,9 +244,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_St_Mard_3_0() {
+        function style_Bernay_3_0() {
             return {
-                pane: 'pane_St_Mard_3',
+                pane: 'pane_Bernay_3',
                 opacity: 1,
                 color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
@@ -254,20 +255,22 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(125,252,233,1.0)',
+                fillColor: 'rgba(131,218,246,1.0)',
             }
         }
-        map.createPane('pane_St_Mard_3');
-        map.getPane('pane_St_Mard_3').style.zIndex = 403;
-        map.getPane('pane_St_Mard_3').style['mix-blend-mode'] = 'normal';
-        var layer_St_Mard_3 = new L.geoJson(json_St_Mard_3, {
+        map.createPane('pane_Bernay_3');
+        map.getPane('pane_Bernay_3').style.zIndex = 403;
+        map.getPane('pane_Bernay_3').style['mix-blend-mode'] = 'normal';
+        var layer_Bernay_3 = new L.geoJson(json_Bernay_3, {
             attribution: '<a href=""></a>',
-            pane: 'pane_St_Mard_3',
-            onEachFeature: pop_St_Mard_3,
-            style: style_St_Mard_3_0,
+            pane: 'pane_Bernay_3',
+            onEachFeature: pop_Bernay_3,
+            style: style_Bernay_3_0,
         });
-        bounds_group.addLayer(layer_St_Mard_3);
-        map.addLayer(layer_St_Mard_3);
+        bounds_group.addLayer(layer_Bernay_3);
+        map.addLayer(layer_Bernay_3);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/Bernay_3.png" /> Bernay': layer_Bernay_3,'<img src="legend/St_Mard_2.png" /> St_Mard': layer_St_Mard_2,'<img src="legend/Muron_1.png" /> Muron': layer_Muron_1,'<img src="legend/Marsais_0.png" /> Marsais': layer_Marsais_0,}).addTo(map);
         setBounds();
         </script>
     </body>
